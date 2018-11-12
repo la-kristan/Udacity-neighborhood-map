@@ -1,0 +1,21 @@
+{
+  "places": [{
+    "id": 1,
+    "name": "Grand Gyros",
+    "address": "3980 Palmer Park Blvd, Colorado Springs, CO 80909",
+    "latlng": {
+      "lat": 38.8546875,
+      "lng": -104.82136
+    },
+    "type": "restaurant",
+    "operating_hours": {
+      "Monday": "9:30 am - 8:30 pm",
+      "Tuesday": "9:30 am - 8:30 pm",
+      "Wednesday": "9:30 am - 8:30 pm",
+      "Thursday": "9:30 am - 8:30 pm",
+      "Friday": "9:30 am - 8:30 pm",
+      "Saturday": "9:30 am - 8:30 pm",
+      "Sunday": "11:30 am - 7:30 pm"
+    }
+  }]
+}
