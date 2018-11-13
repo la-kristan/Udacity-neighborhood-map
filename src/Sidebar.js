@@ -7,10 +7,12 @@ class Sidebar extends React.Component {
 				<input type="text" placeholder="Filter restaurants" onChange={e => this.props.filterResults(e.target.value)} />
 				<ul>
 					{this.props.places.map((place, i) => {return (
-						<li key={place.id} className="info" onClick={() => {this.props.triggerMarker(this.props.allMarkers[i])}}>
-							<h3>{place.name}</h3>
-							<p>{place.cuisine}</p>
-							<a href={place.website} target="_blank">Visit website</a>
+						<li key={place.id} className="info">
+							<button onClick={() => {this.props.triggerMarker(this.props.realMarkers[i])}}>
+								<h3>{place.name}</h3>
+								<p>{place.cuisine}</p>
+								<a href={place.website} target="_blank" rel="noopener noreferrer">Visit website</a>
+							</button>
 						</li>
 						)}
 					)}

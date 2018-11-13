@@ -10,13 +10,18 @@ class App extends Component {
   state = {
     shownPlaces: places,
     showingInfoWindow: true,
-    activeMarker: null
+    activeMarker: null,
+    realMarkers: []
   }
 
   allMarkers = []
 
   saveMarkers = m => {
     this.allMarkers.push(m)
+  }
+
+  saveRealMarkers = array => {
+    this.setState({realMarkers: array});
   }
 
   triggerMarker = (marker) => {
@@ -35,6 +40,10 @@ class App extends Component {
     }
   }
 
+  onInfoWindowClose = () => {
+    this.setState({showingInfoWindow: false});
+  }
+
   render() {
     return (
       <div className="App">
@@ -44,6 +53,7 @@ class App extends Component {
           filterResults={this.filterResults}
           triggerMarker={this.triggerMarker}
           allMarkers={this.allMarkers}
+          realMarkers={this.state.realMarkers}
         />
         <MapContainer 
           className="MapContainer" 
@@ -53,6 +63,7 @@ class App extends Component {
           triggerMarker={this.triggerMarker}
           showingInfoWindow={this.state.showingInfoWindow}
           activeMarker={this.state.activeMarker}
+          saveRealMarkers={this.saveRealMarkers}
         />
       </div>
     );
