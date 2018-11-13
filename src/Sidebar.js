@@ -4,6 +4,7 @@ class Sidebar extends React.Component {
 	render() {
 		return(
 			<aside className="sidebar">
+				<input type="text" placeholder="Filter restaurants" onChange={e => this.props.filterResults(e.target.value)} />
 				<ul>
 					{this.props.places.map(place => {return (
 						<li key={place.id} className="info">
