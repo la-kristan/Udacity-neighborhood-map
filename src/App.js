@@ -8,7 +8,19 @@ import './App.css';
 class App extends Component {
 
   state = {
-    shownPlaces: places
+    shownPlaces: places,
+    showingInfoWindow: true,
+    activeMarker: null
+  }
+
+  allMarkers = []
+
+  saveMarkers = m => {
+    this.allMarkers.push(m)
+  }
+
+  triggerMarker = (marker) => {
+    this.setState({showingInfoWindow: true, activeMarker: marker})
   }
 
   filterResults = q => {
@@ -27,8 +39,21 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Sidebar places={this.state.shownPlaces} filterResults={this.filterResults}/>
-        <MapContainer className="MapContainer" location={{lat: 38.83388, lng: -104.82136}} places={this.state.shownPlaces}/>
+        <Sidebar 
+          places={this.state.shownPlaces} 
+          filterResults={this.filterResults}
+          triggerMarker={this.triggerMarker}
+          allMarkers={this.allMarkers}
+        />
+        <MapContainer 
+          className="MapContainer" 
+          location={{lat: 38.83388, lng: -104.82136}} 
+          places={this.state.shownPlaces} 
+          saveMarkers={this.saveMarkers}
+          triggerMarker={this.triggerMarker}
+          showingInfoWindow={this.state.showingInfoWindow}
+          activeMarker={this.state.activeMarker}
+        />
       </div>
     );
   }
