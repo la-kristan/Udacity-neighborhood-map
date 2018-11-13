@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Sidebar />
-        <MapContainer className="MapContainer" location={{lat: 38.83388, lng: -104.82136}} />
+        <Sidebar places={places}/>
+        <MapContainer className="MapContainer" location={{lat: 38.83388, lng: -104.82136}} places={places}/>
       </div>
     );
   }

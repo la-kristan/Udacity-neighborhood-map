@@ -1,13 +1,13 @@
-{
-  "places": [{
+[{
     "id": 1,
     "name": "Grand Gyros",
     "address": "3980 Palmer Park Blvd, Colorado Springs, CO 80909",
     "latlng": {
-      "lat": 38.8546875,
-      "lng": -104.82136
+      "lat": 38.854742,
+      "lng": -104.754141
     },
-    "type": "restaurant",
+    "cuisine": "Greek",
+    "website": "http://grandgyros.com/index.html",
     "operating_hours": {
       "Monday": "9:30 am - 8:30 pm",
       "Tuesday": "9:30 am - 8:30 pm",
@@ -17,5 +17,85 @@
       "Saturday": "9:30 am - 8:30 pm",
       "Sunday": "11:30 am - 7:30 pm"
     }
-  }]
-}
+  },
+    {
+    "id": 2,
+    "name": "CiCis",
+    "address": "3255 E Platte Ave, Colorado Springs, CO 80909",
+    "latlng": {
+      "lat": 38.839123,
+      "lng": -104.769080
+    },
+    "cuisine": "Italian/Pizza",
+    "website": "https://www.cicis.com/locations/co-colorado-springs-3255-e-platte-ave",
+    "operating_hours": {
+      "Monday": "11 am - 10 pm",
+      "Tuesday": "11 am - 10 pm",
+      "Wednesday": "11 am - 10 pm",
+      "Thursday": "11 am - 10 pm",
+      "Friday": "11 am - 11 pm",
+      "Saturday": "11 am - 10 pm",
+      "Sunday": "11 am - 10 pm"
+    }
+  },
+    {
+    "id": 3,
+    "name": "Little Caesars Pizza",
+    "address": "2909 Galley Rd, Colorado Springs, CO 80909",
+    "latlng": {
+      "lat": 38.846748,
+      "lng": -104.774884
+    },
+    "cuisine": "Pizza",
+    "website": "https://littlecaesars.com",
+    "operating_hours": {
+      "Monday": "10:30 am - 10 pm",
+      "Tuesday": "10:30 am - 10 pm",
+      "Wednesday": "10:30 am - 10 pm",
+      "Thursday": "10:30 am - 10 pm",
+      "Friday": "10:30 am - 10:30 pm",
+      "Saturday": "10:30 am - 10 pm",
+      "Sunday": "10:30 am - 10 pm"
+    }
+  },
+    {
+    "id": 4,
+    "name": "Taste of China",
+    "address": "1811 S Academy Blvd, Colorado Springs, CO 80916",
+    "latlng": {
+      "lat": 38.806784,
+      "lng": -104.755714
+    },
+    "cuisine": "Chinese",
+    "website": "https://www.tasteofchinaco.com/",
+    "operating_hours": {
+      "Monday": "11 am – 2:30 pm, 4:30 pm – 8:30 pm",
+      "Tuesday": "11 am – 2:30 pm, 4:30 pm – 8:30 pm",
+      "Wednesday": "11 am – 2:30 pm, 4:30 pm – 8:30 pm",
+      "Thursday": "11 am – 2:30 pm, 4:30 pm – 8:30 pm",
+      "Friday": "11 am – 2:30 pm, 4:30 pm – 8:30 pm",
+      "Saturday": "11 am – 2:30 pm, 4:30 pm – 8:30 pm",
+      "Sunday": "11 am – 2:30 pm, 4:30 pm – 8:30 pm"
+    }
+  },
+    {
+    "id": 5,
+    "name": "Country Buffet",
+    "address": "801 N Academy Blvd, Colorado Springs, CO 80909",
+    "latlng": {
+      "lat": 38.844507,
+      "lng": -104.755208
+    },
+    "cuisine": "American",
+    "website": "http://www.countrybuffet.com/",
+    "operating_hours": {
+      "Monday": "11 am – 8:30 pm",
+      "Tuesday": "11 am – 8:30 pm",
+      "Wednesday": "11 am – 8:30 pm",
+      "Thursday": "11 am – 8:30 pm",
+      "Friday": "11 am – 9 pm",
+      "Saturday": "8 am – 9 pm",
+      "Sunday": "8 am – 8:30 pm"
+    }
+  }
+]

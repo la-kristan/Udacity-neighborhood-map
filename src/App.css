@@ -8,8 +8,8 @@
 }
 
 header {
-  background-color: blue;
-  color: white;
+  background-color: #67e;
+  color: #eee;
   font-family: sans-serif;
   padding: 20px;
   z-index: 3;
@@ -19,13 +19,36 @@ h1 {
   margin: 0;
 }
 
-aside {
-  background-color: #aaa;
+.sidebar {
+  background-color: #ddd;
   position: absolute;
   width: 200px;
+  max-width: 100%;
   z-index: 2;
   left: 0;
   top: 73px;
   margin: 0;
   padding: 10px;
+}
+
+.sidebar ul {
+  padding: 0;
+}
+
+.info {
+  background-color: #ccc;
+  list-style-type: none;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+}
+
+.info h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.info p {
+  margin: 6px 0;
 }
