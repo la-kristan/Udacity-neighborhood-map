@@ -5,6 +5,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 export class MapContainer extends React.Component {
   realMarkers = [];
+  map = null;
 
   onMarkerClick = (props, marker, e) => {
     this
@@ -13,6 +14,8 @@ export class MapContainer extends React.Component {
   }
 
   addRealMarker = obj => {
+    if (obj === null) return;
+
     let addMarker = true;
     this
       .realMarkers
@@ -22,25 +25,37 @@ export class MapContainer extends React.Component {
         }
       )
     if (addMarker) {
+      console.log("marker object: ", obj);
+      obj.marker.map = this.map;
       this
         .realMarkers
-        .push(obj.marker);
+        .push(obj);
       this
         .props
         .saveRealMarkers(this.realMarkers);
     }
   }
 
+  mapReady = (props, map) => {
+    this.map = map;
+    if (this.realMarkers.length) {
+      this.realMarkers.forEach(marker => {
+        marker.map = map;
+      })
+    }
+  }
+
   render() {
     if (this.realMarkers.length !== this.props.places.length) {
       console.log("resetting real markers");
+      console.log(this.realMarkers);
       this.realMarkers = [];
     }
 
     console.log("activeMarker: ", this.props.activeMarker);
 
     return (
-      <Map google={this.props.google} initialCenter={this.props.location} zoom={12}>
+      <Map google={this.props.google} onReady={this.mapReady} initialCenter={this.props.location} zoom={12}>
 
         {this
           .props
