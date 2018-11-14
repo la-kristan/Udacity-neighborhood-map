@@ -14,12 +14,6 @@ class App extends Component {
     realMarkers: []
   }
 
-  allMarkers = []
-
-  saveMarkers = m => {
-    this.allMarkers.push(m)
-  }
-
   saveRealMarkers = array => {
     this.setState({realMarkers: array});
   }
@@ -52,14 +46,12 @@ class App extends Component {
           places={this.state.shownPlaces} 
           filterResults={this.filterResults}
           triggerMarker={this.triggerMarker}
-          allMarkers={this.allMarkers}
           realMarkers={this.state.realMarkers}
         />
         <MapContainer 
           className="MapContainer" 
           location={{lat: 38.83388, lng: -104.82136}} 
           places={this.state.shownPlaces} 
-          saveMarkers={this.saveMarkers}
           triggerMarker={this.triggerMarker}
           showingInfoWindow={this.state.showingInfoWindow}
           activeMarker={this.state.activeMarker}

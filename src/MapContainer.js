@@ -68,10 +68,7 @@ export class MapContainer extends React.Component {
               name={place.name}
               title={place.name}
               position={place.latlng}/>)
-            this
-              .props
-              .saveMarkers(mark);
-            return mark;
+              return mark;
           })
 }
 
