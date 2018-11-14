@@ -21,7 +21,9 @@ class App extends Component {
   }
 
   triggerMarker = marker => {
-    this.setState({showingInfoWindow: true, activeMarker: marker})
+    this.setState({showingInfoWindow: true, activeMarker: marker});
+    marker.setAnimation(window.google.maps.Animation.BOUNCE);
+    setTimeout(marker.setAnimation(null), 5000)
   }
 
   filterResults = q => {
