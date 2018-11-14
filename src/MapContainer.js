@@ -1,42 +1,52 @@
 import React from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
-// based on the google-maps-react package's documentation
+//started from code based on the google-maps-react package's documentation
 
-export class MapContainer extends React.Component {realMarkers = [];
-  map = null;
-  creationCount = 0;
+export class MapContainer extends React.Component {
 
-  onMarkerClick = (props, marker, e) => {
+	//this will be populated with references to all the markers on the map
+	realMarkers = [];
+	//nothing is on a map yet
+	map = null;
+	
+	//clicking the marker triggers the function defined in App.js
+	onMarkerClick = (props, marker, e) => {
     this
       .props
       .triggerMarker(marker);
   }
-
+//special thanks to Doug Brown for his help with this function!
   addRealMarker = obj => {
-    if (obj === null /*|| this.creationCount > 1*/) return;
+  	//break out of the function if there isn't a marker
+    if (obj === null) return;
 
     let addMarker = true;
     this
       .realMarkers
       .forEach(marker => {
+      	//make sure marker in realMarkers isn't one we already passed, and has a value
         if (obj === marker || marker === null) 
           addMarker = false;
         }
       )
     if (addMarker) {
+    //add the marker reference to the realMarkers array
       this
         .realMarkers
         .push(obj);
+    //and save it to the state in App.js
       this
         .props
         .saveRealMarkers(this.realMarkers);
     }
   }
 
+//set this.map to be the map on the screen
   mapReady = (props, map) => {
     this.map = map;
     if (this.realMarkers.length) {
+    //and set the map property of all the markers in realMarkers to it, because otherwise they were null
       this.realMarkers.forEach(marker => {
         marker.map = map;
       })
@@ -46,7 +56,6 @@ export class MapContainer extends React.Component {realMarkers = [];
 
   render() {
     
-    this.creationCount++;
     console.log("activeMarker: ", this.props.activeMarker);
 
     return (

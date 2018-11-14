@@ -14,6 +14,10 @@ Service worker:
 
 The app uses the default create-react-app service worker, which is only available in production mode.
 
+Note on Google Maps API Error handling:
+
+Since I used google-maps-react, most of the Google Maps API stuff is behind the scenes. I googled how to implement error handling with this package, but nobody had any answers. 
+
 References:
 
 This project was made with the packages create-react-app and google-maps-react. All the files outside the src directory are default files added by create-react-app, as are a few of the files inside src, with varying levels of modification.
