@@ -64,6 +64,8 @@ class App extends Component {
           showingInfoWindow={this.state.showingInfoWindow}
           activeMarker={this.state.activeMarker}
           saveRealMarkers={this.saveRealMarkers}
+          role="application"
+          aria-label="map"
         />
       </div>
     );
