@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
 							<button onClick={() => {this.props.triggerMarker(this.props.realMarkers[i].marker)}}>
 								<h3>{place.name}</h3>
 								<p>{place.cuisine}</p>
-								<a href={place.website} target="_blank">Visit website</a>
+								<a href={place.website} target="_blank" rel="noopener noreferrer">Visit website</a>
 							</button>
 						</li>
 						)}

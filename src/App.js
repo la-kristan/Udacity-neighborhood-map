@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import places from './data/places.json';
+//import places from './data/places.json';
 import MapContainer from './MapContainer';
 import Header from './Header';
 import Sidebar from './Sidebar.js';
@@ -8,35 +8,44 @@ import './App.css';
 class App extends Component {
 
   state = {
-    shownPlaces: places,
+    shownPlaces: [],
     showingInfoWindow: true,
     activeMarker: null,
     realMarkers: []
   }
 
+  allPlaces = [];
+
   saveRealMarkers = array => {
     this.setState({realMarkers: array});
   }
 
-  triggerMarker = (marker) => {
+  triggerMarker = marker => {
     this.setState({showingInfoWindow: true, activeMarker: marker})
   }
 
   filterResults = q => {
     if (q.length > 0) {
-    let filteredPlaces = places.filter(p => {return (
+    let filteredPlaces = this.allPlaces.filter(p => {return (
       p.name.toLowerCase().includes(q.toLowerCase()) || p.cuisine.toLowerCase().includes(q.toLowerCase()) )
     });
     this.setState({shownPlaces: filteredPlaces})
     }
     else if (q.length === 0) {
-      this.setState({shownPlaces: places})
+      this.setState({shownPlaces: this.allPlaces})
     }
   }
 
   onInfoWindowClose = () => {
     this.setState({showingInfoWindow: false});
   }
+
+ componentDidMount() {
+    fetch("https://api.myjson.com/bins/bqanm")
+        .then(res => res.json())
+        .then(res => this.allPlaces = res)
+        .then(() => this.setState({shownPlaces: this.allPlaces}))
+}
 
   render() {
     return (
