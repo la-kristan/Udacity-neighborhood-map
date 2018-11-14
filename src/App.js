@@ -47,6 +47,7 @@ class App extends Component {
         .then(res => res.json())
         .then(res => this.allPlaces = res)
         .then(() => this.setState({shownPlaces: this.allPlaces}))
+        .catch(err => alert("Data could not be loaded. " + err))
 }
 
   render() {

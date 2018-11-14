@@ -1,4 +1,37 @@
+This is an app, showing a map of my favorite restaurants in Colorado Springs!
+
+Running the app:
+
+To run this project from your terminal, download the files (unzipping them if needed, of course), then cd into the directory containing them. Run `npm install` to install the dependencies, then `npm start` to start the server. If your browser does not open automatically, paste the localhost address given in the terminal into your browser.
+
+For subsequent runs of this program, you just need `npm start`.
+
+Using the app:
+
+The map starts out with five locations (I may add more in future versions). If you want to filter the results, type in the text input box in the top left corner. You can search by restaurant name or type of cuisine. The filtered results will appear on the map, and in the list on the left. You can click the list item or the marker to see the restaurant name on the map. If you don't like the list being in your way, click "Toggle sidebar" to hide it. This leaves only the search box and the button. If you want to see the list again, just click the button again.
+
+Service worker:
+
+The app uses the default create-react-app service worker, which is only available in production mode.
+
+References:
+
+This project was made with the packages create-react-app and google-maps-react. All the files outside the src directory are default files added by create-react-app, as are a few of the files inside src, with varying levels of modification.
+
+MapContainer.js started with code from the google-maps-react documentation, but of course has been greatly modified since then.
+
+The restaurant data is brought in from api.myjson.com, a convenient place to host all your JSON.
+
+Much of the overall coding approach was inspired by Doug Brown's walkthrough: https://www.youtube.com/watch?v=NVAVLCJwAAo
+
+Special thanks to Doug Brown for his immense assistance in debugging this program, and to all the wonderful people on the Grow With Google Slack for their advice and encouragement! 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+
+------default create-react-app README, in case it's useful-------
+
 
 ## Available Scripts
 
